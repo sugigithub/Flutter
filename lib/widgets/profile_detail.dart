@@ -43,31 +43,34 @@ class _ProfileDetailState extends State<ProfileDetail> {
               activeAccount,
               style: GlobalStyles.of(context).captionMedium,
             ),
-            Row(children: <Widget>[
-              Flexible(
-                child: Row(
-                  children: <Widget>[
-                    Text(
-                      activeAccount == Strings.myPrepaid
-                          ? '${Strings.accountNo} '
-                          : '${Strings.postpaidAccountNo} ',
-                      style: GlobalStyles.of(context).accNoText,
+            Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Flexible(
+                    fit: FlexFit.loose,
+                    child: Row(
+                      children: <Widget>[
+                        Text(
+                          activeAccount == Strings.myPrepaid
+                              ? '${Strings.accountNo} '
+                              : '${Strings.postpaidAccountNo} ',
+                          style: GlobalStyles.of(context).accNoText,
+                        ),
+                        Image.asset(
+                          Images.arrowdown,
+                          height: 20,
+                          width: 20,
+                        ),
+                      ],
                     ),
-                    Image.asset(
-                      Images.arrowdown,
-                      height: 20,
-                      width: 20,
-                    ),
-                  ],
-                ),
-              ),
-              Image.asset(
-                Images.add,
-                height: 23,
-                width: 23,
-              ),
-              // ),
-            ]),
+                  ),
+                  Image.asset(
+                    Images.add,
+                    height: 23,
+                    width: 23,
+                  ),
+                  // ),
+                ]),
           ],
         ),
       ),

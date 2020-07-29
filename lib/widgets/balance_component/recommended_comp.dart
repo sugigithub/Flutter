@@ -4,8 +4,6 @@ import '../../resources/strings.dart';
 import '../../styles/colors.dart';
 import '../../styles/global_styles.dart';
 import 'new_tag.dart';
-// import 'recommended_head.dart';
-// import '../common/with_padding.dart';
 import '../../models/recommended.dart';
 import '../../common/card_builder.dart';
 

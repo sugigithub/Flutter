@@ -6,13 +6,13 @@ import '../common/sideDrawer.dart';
 import '../widgets/bottom_nav.dart';
 import '../widgets/profile_detail.dart';
 import '../widgets/balance_component/balance_comp.dart';
-import '../widgets/special_Promos.dart';
+import '../common/special_Promos.dart';
 import '../widgets/latest_promos.dart';
-import '../widgets/roaming_plans.dart';
 import '../widgets/globe_rewards.dart';
 import '../widgets/brand.dart';
 import '../common/button.dart';
 import '../widgets/my_subscriptions/my_subscriptions.dart';
+import '../resources/strings.dart';
 
 class Dashboard extends StatefulWidget {
   @override
@@ -45,12 +45,26 @@ class _DashboardState extends State<Dashboard> {
             children: <Widget>[
               ProfileDetail(),
               BalanceComponent(),
-              SpecialPromos(),
+              SpecialPromos(
+                heading: Strings.specialPromos,
+                backgroungImage: Images.promo,
+                overlayText: Strings.createyourownPromo,
+                subHeading: Strings.createWhatMatters,
+                desc: Strings.promoThatsAllAou,
+                caption: Strings.goSakto,
+              ),
               LatestPromos(),
-              RoamingPlans(),
+              SpecialPromos(
+                heading: Strings.roamingPlans,
+                backgroungImage: Images.roamingplan,
+                overlayText: Strings.exploreRoamingPacks,
+                subHeading: Strings.planingForForeignTrip,
+                desc: Strings.roamWorryFree,
+                caption: Strings.goSakto,
+              ),
               GlobeRewards(),
               Brand(),
-              Button(),
+              Button(Strings.findOutMore),
               MySubscriptions(),
             ],
           ),

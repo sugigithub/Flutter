@@ -5,6 +5,9 @@ import '../styles/global_styles.dart';
 import '../styles/colors.dart';
 
 class Button extends StatelessWidget {
+  final String btnText;
+
+  Button(this.btnText);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -17,9 +20,7 @@ class Button extends StatelessWidget {
             side: BorderSide(color: DefaultColors.black, width: 2)),
         color: DefaultColors.white,
         elevation: 0,
-        onPressed: () {
-          print("presses");
-        },
+        onPressed: () {},
         child: Text(
           Strings.findOutMore,
           style: GlobalStyles.of(context).btnText,

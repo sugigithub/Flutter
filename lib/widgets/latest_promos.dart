@@ -17,7 +17,7 @@ class LatestPromos extends StatelessWidget {
       card: (_, i) => ContainerLayout(
         backgroundImage: LatestPromosData[i].background,
         width: 160,
-        widgetOne: <Widget>[
+        topWidget: <Widget>[
           Image.asset(
             LatestPromosData[i].icon,
             fit: BoxFit.cover,
@@ -38,7 +38,7 @@ class LatestPromos extends StatelessWidget {
             ],
           ),
         ],
-        widgetTwo: Column(
+        overlayWidget: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[

@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 class ContainerLayout extends StatelessWidget {
   final double width;
-  final List<Widget> widgetOne;
-  final Widget widgetTwo;
+  final List<Widget> topWidget;
+  final Widget overlayWidget;
   final String backgroundImage;
 
   ContainerLayout(
       {@required this.width,
-      @required this.widgetOne,
-      @required this.widgetTwo,
+      @required this.topWidget,
+      @required this.overlayWidget,
       @required this.backgroundImage});
 
   @override
@@ -39,7 +39,7 @@ class ContainerLayout extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: widgetOne,
+                children: topWidget,
               ),
             ),
             Container(
@@ -51,7 +51,7 @@ class ContainerLayout extends StatelessWidget {
                 ),
                 color: Color.fromRGBO(0, 0, 0, 0.3),
               ),
-              child: widgetTwo,
+              child: overlayWidget,
             ),
           ],
         ),

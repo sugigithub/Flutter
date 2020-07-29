@@ -22,12 +22,11 @@ class SideDrawer extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  //  WithPadding(
                   CircleAvatar(
                     child: Image.asset(
                       Images.profile,
                       height: 65,
-                      // width: 65,
+                      width: 65,
                       fit: BoxFit.cover,
                     ),
                   ),

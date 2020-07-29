@@ -10,7 +10,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   Size get preferredSize => Size.fromHeight(kToolbarHeight);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext ctx) {
     return AppBar(
       leading: Builder(
         builder: (BuildContext context) {
@@ -42,8 +42,9 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
           ),
         ),
       ],
-      backgroundColor: DefaultColors.white,
-      elevation: 0,
+      // backgroundColor: DefaultColors.white,
+      elevation: Theme.of(ctx).appBarTheme.elevation,
+      backgroundColor: Theme.of(ctx).appBarTheme.color,
     );
   }
 }

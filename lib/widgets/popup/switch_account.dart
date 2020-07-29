@@ -60,12 +60,6 @@ class SwitchAccount extends StatelessWidget {
           indent: 16,
         ),
         _buildListItem(Strings.myPostPaid, Strings.postpaidAccountNo),
-        Divider(
-          thickness: 2,
-          height: 0,
-          endIndent: 16,
-          indent: 16,
-        ),
       ],
     );
   }

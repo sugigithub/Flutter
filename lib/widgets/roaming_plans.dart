@@ -23,7 +23,7 @@ class RoamingPlans extends StatelessWidget {
           ContainerLayout(
             backgroundImage: Images.roamingplan,
             width: double.infinity,
-            widgetOne: <Widget>[
+            topWidget: <Widget>[
               const Text(Strings.goSakto),
               TwoLineText([
                 {
@@ -36,7 +36,7 @@ class RoamingPlans extends StatelessWidget {
                 }
               ])
             ],
-            widgetTwo: const Text(Strings.exploreRoamingPacks),
+            overlayWidget: const Text(Strings.exploreRoamingPacks),
           ),
         ],
       ),

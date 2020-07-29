@@ -4,9 +4,7 @@ import 'screens/dashboard.dart';
 import 'styles/global_styles.dart';
 import 'styles/themes.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -16,7 +14,7 @@ class MyApp extends StatelessWidget {
       context,
       MaterialApp(
         title: 'Flutter Demo',
-        theme: Themes.getLightTheme(),
+        theme: Themes.lightTheme,
         home: Dashboard(),
       ),
     );

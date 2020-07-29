@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../resources/strings.dart';
 import '../../styles/colors.dart';
-import '../../resources/images.dart';
 import '../../common/movie_poster.dart';
 import '../../data/movies.dart';
 import 'you_may_like.dart';
@@ -22,16 +20,11 @@ class MySubscriptions extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           SubscriptionsHeading(),
-          MoviePoster(
-            data: moviesData[0]['amazon'],
-            image: Images.netflix,
-            text: Strings.popularOn,
-          ),
-          MoviePoster(
-            data: moviesData[1]['amazon'],
-            image: Images.prime,
-            text: Strings.latestOn,
-          ),
+          ...moviesData.map((movie) => MoviePoster(
+                data: movie.moviePoster,
+                image: movie.titleImage,
+                text: movie.title,
+              )),
           YouMayLike(),
         ],
       ),

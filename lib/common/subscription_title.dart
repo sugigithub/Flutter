@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import '../resources/strings.dart';
 import '../styles/global_styles.dart';
 
-class HeadingWithImage extends StatelessWidget {
+class SubscriptionTitle extends StatelessWidget {
   final String text;
   final String image;
-  HeadingWithImage({@required this.text, @required this.image});
+  SubscriptionTitle({@required this.text, @required this.image});
 
   @override
   Widget build(BuildContext context) {

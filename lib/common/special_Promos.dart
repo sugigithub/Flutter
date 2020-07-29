@@ -2,12 +2,27 @@ import 'package:flutter/material.dart';
 
 import '../resources/strings.dart';
 import '../resources/images.dart';
-import '../common/heading.dart';
-import '../common/container_layout.dart';
-import '../common/with_padding.dart';
-import '../common/twoline_text.dart';
+import 'heading.dart';
+import 'container_layout.dart';
+import 'with_padding.dart';
+import 'twoline_text.dart';
 
 class SpecialPromos extends StatelessWidget {
+  final String heading;
+  final String backgroungImage;
+  final String overlayText;
+  final String subHeading;
+  final String desc;
+  final String caption;
+
+  SpecialPromos(
+      {@required this.heading,
+      @required this.backgroungImage,
+      @required this.overlayText,
+      @required this.subHeading,
+      @required this.caption,
+      @required this.desc});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -19,28 +34,22 @@ class SpecialPromos extends StatelessWidget {
         children: <Widget>[
           Padding(
             padding: EdgeInsets.only(left: 4, bottom: 10),
-            child: Heading(
-              isViewAll: false,
-              text: Strings.specialPromos,
-            ),
+            child: Heading(isViewAll: false, text: heading),
           ),
           ContainerLayout(
-            backgroundImage: Images.promo,
+            backgroundImage: backgroungImage,
             width: double.infinity,
-            widgetOne: <Widget>[
-              const Text(Strings.goSakto),
+            topWidget: <Widget>[
+              Text(caption),
               TwoLineText([
                 {
-                  'text': Strings.createWhatMatters,
+                  'text': subHeading,
                   'style': Theme.of(context).textTheme.headline6
                 },
-                {
-                  'text': Strings.promoThatsAllAou,
-                  'style': Theme.of(context).textTheme.caption
-                }
+                {'text': desc, 'style': Theme.of(context).textTheme.caption}
               ])
             ],
-            widgetTwo: const Text(Strings.createyourownPromo),
+            overlayWidget: Text(overlayText),
           ),
         ],
       ),

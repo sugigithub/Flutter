@@ -1,8 +1,10 @@
 import '../resources/images.dart';
+import '../models/movie_poster.dart';
+import '../resources/strings.dart';
 
 final moviesData = [
-  {
-    'amazon': [
+  MoviePoster(
+    moviePoster: [
       Images.reasonsWhy,
       Images.americangod,
       Images.bright,
@@ -11,9 +13,11 @@ final moviesData = [
       Images.justAddMagic,
       Images.lostinpeace,
     ],
-  },
-  {
-    'amazon': [
+    title: Strings.popularOn,
+    titleImage: Images.netflix,
+  ),
+  MoviePoster(
+    moviePoster: [
       Images.moneyheist,
       Images.polar,
       Images.riverdale,
@@ -21,5 +25,7 @@ final moviesData = [
       Images.terminator,
       Images.youAreWanted,
     ],
-  },
+    title: Strings.latestOn,
+    titleImage: Images.prime,
+  )
 ];

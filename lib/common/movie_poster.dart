@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../common/card_builder.dart';
-import '../common/heading_with_image.dart';
+import 'subscription_title.dart';
 
 class MoviePoster extends StatelessWidget {
   final List<String> data;
@@ -13,7 +13,7 @@ class MoviePoster extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CardBuilder(
-        heading: HeadingWithImage(
+        heading: SubscriptionTitle(
           image: image,
           text: text,
         ),
