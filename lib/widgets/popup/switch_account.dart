@@ -1,3 +1,4 @@
+import 'package:demo_app/models/user_account.dart';
 import 'package:flutter/material.dart';
 
 import '../../styles/colors.dart';
@@ -7,30 +8,34 @@ import '../../common/twoline_text.dart';
 import '../../resources/images.dart';
 
 class SwitchAccount extends StatelessWidget {
-  final String activeAccount;
+  final UserAccount activeAccount;
   final Function changeAccount;
+  final List<UserAccount> accounts;
 
-  SwitchAccount(this.activeAccount, this.changeAccount);
+  SwitchAccount(this.activeAccount, this.changeAccount, this.accounts);
   @override
   Widget build(BuildContext context) {
-    Widget _buildListItem(String text, String accNo) {
+    Widget _buildListItem(UserAccount account) {
       return GestureDetector(
-        onTap: () => changeAccount(text),
+        onTap: () => changeAccount(accounts.indexOf(account)),
         child: Container(
-          height: 70,
+          // height: 70,
           padding: EdgeInsets.symmetric(horizontal: 16),
           color: DefaultColors.white,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               TwoLineText([
-                {'text': text, 'style': GlobalStyles.of(context).popupAccText},
                 {
-                  'text': accNo,
+                  'text': account.accountName,
+                  'style': GlobalStyles.of(context).popupAccText
+                },
+                {
+                  'text': account.accountNo,
                   'style': GlobalStyles.of(context).popupAccNoText
                 },
               ]),
-              if (activeAccount == text)
+              if (activeAccount == account)
                 Image.asset(Images.checked,
                     fit: BoxFit.cover, height: 28, width: 28)
             ],
@@ -52,14 +57,13 @@ class SwitchAccount extends StatelessWidget {
             style: GlobalStyles.of(context).popupText,
           ),
         ),
-        _buildListItem(Strings.myPrepaid, Strings.accountNo),
-        Divider(
-          thickness: 2,
-          height: 0,
-          endIndent: 16,
-          indent: 16,
-        ),
-        _buildListItem(Strings.myPostPaid, Strings.postpaidAccountNo),
+        ...accounts
+            .map(
+              (acc) => _buildListItem(acc),
+            )
+            .toList()
+
+        // _buildListItem(Strings.myPostPaid, Strings.postpaidAccountNo),
       ],
     );
   }

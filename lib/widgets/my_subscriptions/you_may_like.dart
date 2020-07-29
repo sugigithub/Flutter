@@ -3,17 +3,28 @@ import 'package:flutter/material.dart';
 import '../../data/you_may_like_data.dart';
 import '../../resources/strings.dart';
 import '../../styles/global_styles.dart';
+import '../../common/with_padding.dart';
 import '../../common/rich_text.dart';
-import '../../common/card_builder.dart';
 
 class YouMayLike extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return CardBuilder(
-        heading: Text(Strings.youMightAlsoLike,
-            style: GlobalStyles.of(context).captionSemiBold),
-        height: 216,
-        card: (_, i) => Card(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: <Widget>[
+        WithPadding(
+          Text(Strings.youMightAlsoLike,
+              style: GlobalStyles.of(context).captionSemiBold),
+        ),
+        Container(
+          height: 216,
+          child: ListView.builder(
+            scrollDirection: Axis.horizontal,
+            padding:
+                const EdgeInsets.only(left: 16, right: 16, top: 10, bottom: 15),
+            itemCount: YouMayLikeData.length,
+            itemBuilder: (_, i) => Card(
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(15)),
               ),
@@ -71,6 +82,9 @@ class YouMayLike extends StatelessWidget {
                 ),
               ),
             ),
-        count: YouMayLikeData.length);
+          ),
+        )
+      ],
+    );
   }
 }

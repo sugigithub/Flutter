@@ -1,9 +1,11 @@
+import 'package:demo_app/models/user_account.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-import '../resources/strings.dart';
 import '../resources/images.dart';
 import '../styles/global_styles.dart';
 import '../widgets/popup/switch_account.dart';
+import '../data/user_account.dart';
 
 class ProfileDetail extends StatefulWidget {
   @override
@@ -11,26 +13,37 @@ class ProfileDetail extends StatefulWidget {
 }
 
 class _ProfileDetailState extends State<ProfileDetail> {
-  var activeAccount = Strings.myPrepaid;
+  UserAccount activeAccount;
+  AccountData accountData;
+  List<UserAccount> accounts;
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  void _changeAccount(int index) {
+    print(index);
+    Navigator.of(context).pop();
+    activeAccount = accountData.changeActiveAccount(index);
+  }
 
   void _openModel() {
     showDialog(
       context: context,
       builder: (BuildContext context) {
-        return SwitchAccount(activeAccount, _changeAccount);
+        return SwitchAccount(activeAccount, _changeAccount, accounts);
       },
     );
   }
 
-  void _changeAccount(String type) {
-    Navigator.of(context).pop();
-    setState(() {
-      activeAccount = type;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
+    accountData = Provider.of<AccountData>(context);
+    accounts = accountData.accountData;
+    activeAccount = accountData.activeAccount;
+    // activeAccount = accounts[0];
+    print(activeAccount.accountName);
     return Container(
       width: double.infinity,
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
@@ -40,7 +53,7 @@ class _ProfileDetailState extends State<ProfileDetail> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text(
-              activeAccount,
+              activeAccount.accountName,
               style: GlobalStyles.of(context).captionMedium,
             ),
             Row(
@@ -51,9 +64,7 @@ class _ProfileDetailState extends State<ProfileDetail> {
                     child: Row(
                       children: <Widget>[
                         Text(
-                          activeAccount == Strings.myPrepaid
-                              ? '${Strings.accountNo} '
-                              : '${Strings.postpaidAccountNo} ',
+                          activeAccount.accountNo,
                           style: GlobalStyles.of(context).accNoText,
                         ),
                         Image.asset(

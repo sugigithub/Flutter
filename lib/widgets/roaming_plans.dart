@@ -17,8 +17,7 @@ class RoamingPlans extends StatelessWidget {
           Padding(
               padding: EdgeInsets.only(left: 4, bottom: 10),
               child: Heading(
-                text: Strings.roamingPlans,
-                isViewAll: false,
+                heading: Strings.roamingPlans,
               )),
           ContainerLayout(
             backgroundImage: Images.roamingplan,

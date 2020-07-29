@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../common/card_builder.dart';
+import '../common/with_padding.dart';
 import 'subscription_title.dart';
 
 class MoviePoster extends StatelessWidget {
@@ -12,13 +12,24 @@ class MoviePoster extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CardBuilder(
-        heading: SubscriptionTitle(
-          image: image,
-          text: text,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: <Widget>[
+        WithPadding(
+          SubscriptionTitle(
+            image: image,
+            text: text,
+          ),
         ),
-        height: 220,
-        card: (_, i) => Card(
+        Container(
+          height: 220,
+          child: ListView.builder(
+            scrollDirection: Axis.horizontal,
+            padding:
+                const EdgeInsets.only(left: 16, right: 16, top: 10, bottom: 15),
+            itemCount: data.length,
+            itemBuilder: (_, i) => Card(
               elevation: 0,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20)),
@@ -27,6 +38,9 @@ class MoviePoster extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-        count: data.length);
+          ),
+        )
+      ],
+    );
   }
 }

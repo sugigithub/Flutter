@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+import 'package:demo_app/data/user_account.dart';
 import '../styles/colors.dart';
 import '../styles/global_styles.dart';
 import '../resources/images.dart';
@@ -9,6 +11,9 @@ import '../common/with_padding.dart';
 class SideDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var accountData = Provider.of<AccountData>(context);
+    var activeAccount = accountData.activeAccount;
+
     return Drawer(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -30,9 +35,9 @@ class SideDrawer extends StatelessWidget {
                       fit: BoxFit.cover,
                     ),
                   ),
-                  Text(Strings.myPrepaid,
+                  Text(activeAccount.accountName,
                       style: GlobalStyles.of(context).detailText),
-                  Text(Strings.accountNo,
+                  Text(activeAccount.accountNo,
                       style: Theme.of(context).textTheme.subtitle2),
                 ],
               )),

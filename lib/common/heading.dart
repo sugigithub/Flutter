@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 
 import 'text_gradient.dart';
-import '../resources/strings.dart';
 import '../styles/colors.dart';
 import '../styles/global_styles.dart';
 
 class Heading extends StatelessWidget {
+  final String heading;
   final String text;
-  final bool isViewAll;
 
-  Heading({@required this.text, @required this.isViewAll});
+  Heading({@required this.heading, this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -19,12 +18,12 @@ class Heading extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           TextGradient(
-            text: text,
+            text: heading,
             colors: [DefaultColors.violet, DefaultColors.pink],
           ),
-          if (isViewAll)
+          if (text != null)
             Text(
-              Strings.viewAll,
+              text,
               style: GlobalStyles.of(context).viewAllText,
             )
         ],

@@ -18,8 +18,7 @@ class GlobeRewards extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Heading(
-            isViewAll: false,
-            text: Strings.globeRewards,
+            heading: Strings.globeRewards,
           ),
           Container(
             width: double.infinity,

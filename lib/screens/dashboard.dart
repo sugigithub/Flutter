@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:provider/provider.dart';
+
 import '../resources/images.dart';
 import '../common/app_bar.dart';
 import '../common/sideDrawer.dart';
@@ -13,6 +15,7 @@ import '../widgets/brand.dart';
 import '../common/button.dart';
 import '../widgets/my_subscriptions/my_subscriptions.dart';
 import '../resources/strings.dart';
+import '../data/user_account.dart';
 
 class Dashboard extends StatefulWidget {
   @override
@@ -36,44 +39,47 @@ class _DashboardState extends State<Dashboard> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: CustomAppBar(),
-      drawer: SideDrawer(),
-      body: SingleChildScrollView(
-        child: Container(
-          child: Column(
-            children: <Widget>[
-              ProfileDetail(),
-              BalanceComponent(),
-              SpecialPromos(
-                heading: Strings.specialPromos,
-                backgroungImage: Images.promo,
-                overlayText: Strings.createyourownPromo,
-                subHeading: Strings.createWhatMatters,
-                desc: Strings.promoThatsAllAou,
-                caption: Strings.goSakto,
-              ),
-              LatestPromos(),
-              SpecialPromos(
-                heading: Strings.roamingPlans,
-                backgroungImage: Images.roamingplan,
-                overlayText: Strings.exploreRoamingPacks,
-                subHeading: Strings.planingForForeignTrip,
-                desc: Strings.roamWorryFree,
-                caption: Strings.goSakto,
-              ),
-              GlobeRewards(),
-              Brand(),
-              Button(Strings.findOutMore),
-              MySubscriptions(),
-            ],
+    return ChangeNotifierProvider(
+      create: (context) => AccountData(),
+      child: Scaffold(
+        appBar: CustomAppBar(),
+        drawer: SideDrawer(),
+        body: SingleChildScrollView(
+          child: Container(
+            child: Column(
+              children: <Widget>[
+                ProfileDetail(),
+                BalanceComponent(),
+                SpecialPromos(
+                  heading: Strings.specialPromos,
+                  backgroundImage: Images.promo,
+                  overlayText: Strings.createyourownPromo,
+                  subHeading: Strings.createWhatMatters,
+                  desc: Strings.promoThatsAllAou,
+                  caption: Strings.goSakto,
+                ),
+                LatestPromos(),
+                SpecialPromos(
+                  heading: Strings.roamingPlans,
+                  backgroundImage: Images.roamingplan,
+                  overlayText: Strings.exploreRoamingPacks,
+                  subHeading: Strings.planingForForeignTrip,
+                  desc: Strings.roamWorryFree,
+                  caption: Strings.goSakto,
+                ),
+                GlobeRewards(),
+                Brand(),
+                Button(Strings.findOutMore),
+                MySubscriptions(),
+              ],
+            ),
           ),
         ),
+        bottomNavigationBar: BottomNav(
+            bottomNav: bottomNav,
+            onClickFooter: onClickFooter,
+            selectedIndex: _selectedPage),
       ),
-      bottomNavigationBar: BottomNav(
-          bottomNav: bottomNav,
-          onClickFooter: onClickFooter,
-          selectedIndex: _selectedPage),
     );
   }
 }
