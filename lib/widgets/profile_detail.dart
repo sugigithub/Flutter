@@ -2,10 +2,10 @@ import 'package:demo_app/models/user_account.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../resources/images.dart';
-import '../styles/global_styles.dart';
-import '../widgets/popup/switch_account.dart';
-import '../data/user_account.dart';
+import 'package:demo_app/resources/images.dart';
+import 'package:demo_app/styles/global_styles.dart';
+import 'package:demo_app/widgets/popup/switch_account.dart';
+import 'package:demo_app/data/user_account.dart';
 
 class ProfileDetail extends StatefulWidget {
   @override
@@ -42,13 +42,11 @@ class _ProfileDetailState extends State<ProfileDetail> {
     accountData = Provider.of<AccountData>(context);
     accounts = accountData.accountData;
     activeAccount = accountData.activeAccount;
-    // activeAccount = accounts[0];
-    print(activeAccount.accountName);
     return Container(
       width: double.infinity,
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
       child: InkWell(
-        onTap: _openModel,
+        onTap: () => _openModel(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
@@ -57,31 +55,31 @@ class _ProfileDetailState extends State<ProfileDetail> {
               style: GlobalStyles.of(context).captionMedium,
             ),
             Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Flexible(
-                    fit: FlexFit.loose,
-                    child: Row(
-                      children: <Widget>[
-                        Text(
-                          activeAccount.accountNo,
-                          style: GlobalStyles.of(context).accNoText,
-                        ),
-                        Image.asset(
-                          Images.arrowdown,
-                          height: 20,
-                          width: 20,
-                        ),
-                      ],
-                    ),
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Flexible(
+                  fit: FlexFit.loose,
+                  child: Row(
+                    children: <Widget>[
+                      Text(
+                        activeAccount.accountNo,
+                        style: GlobalStyles.of(context).accNoText,
+                      ),
+                      Image.asset(
+                        Images.arrowdown,
+                        height: 20,
+                        width: 20,
+                      ),
+                    ],
                   ),
-                  Image.asset(
-                    Images.add,
-                    height: 23,
-                    width: 23,
-                  ),
-                  // ),
-                ]),
+                ),
+                Image.asset(
+                  Images.add,
+                  height: 23,
+                  width: 23,
+                ),
+              ],
+            ),
           ],
         ),
       ),

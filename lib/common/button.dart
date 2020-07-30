@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../resources/strings.dart';
-import '../styles/global_styles.dart';
-import '../styles/colors.dart';
+import 'package:demo_app/resources/strings.dart';
+import 'package:demo_app/styles/global_styles.dart';
+import 'package:demo_app/styles/colors.dart';
 
 class Button extends StatelessWidget {
   final String btnText;

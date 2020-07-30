@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../styles/colors.dart';
-import '../../data/balance_data.dart';
+import 'package:demo_app/styles/colors.dart';
+import 'package:demo_app/data/balance_data.dart';
 import 'recommended_comp.dart';
 import 'my_prepaid.dart';
 

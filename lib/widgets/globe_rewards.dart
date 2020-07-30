@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '../common/heading.dart';
-import '../resources/strings.dart';
-import '../resources/images.dart';
-import '../styles/global_styles.dart';
-import '../styles/colors.dart';
-import '../common/rich_text.dart';
+import 'package:demo_app/common/heading.dart';
+import 'package:demo_app/resources/strings.dart';
+import 'package:demo_app/resources/images.dart';
+import 'package:demo_app/styles/global_styles.dart';
+import 'package:demo_app/styles/colors.dart';
+import 'package:demo_app/common/rich_text.dart';
 
 class GlobeRewards extends StatelessWidget {
   @override

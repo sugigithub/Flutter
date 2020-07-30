@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../resources/strings.dart';
-import '../styles/global_styles.dart';
-import '../data/brand_data.dart';
-import '../common/rich_text.dart';
-import '../common/with_padding.dart';
+import 'package:demo_app/resources/strings.dart';
+import 'package:demo_app/styles/global_styles.dart';
+import 'package:demo_app/data/brand_data.dart';
+import 'package:demo_app/common/rich_text.dart';
+import 'package:demo_app/common/with_padding.dart';
 
 class Brand extends StatelessWidget {
   @override

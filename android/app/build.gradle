@@ -55,7 +55,7 @@ android {
 }
 
 flutter {
-    source '../..'
+    source 'package:demo_app/..'
 }
 
 dependencies {

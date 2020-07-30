@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../resources/images.dart';
-import '../styles/colors.dart';
-import '../widgets/notification_badge.dart';
-import '../common/with_padding.dart';
+import 'package:demo_app/resources/images.dart';
+import 'package:demo_app/styles/colors.dart';
+import 'package:demo_app/widgets/notification_badge.dart';
+import 'package:demo_app/common/with_padding.dart';
 
 class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   @override
@@ -42,7 +42,6 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
           ),
         ),
       ],
-      // backgroundColor: DefaultColors.white,
       elevation: Theme.of(ctx).appBarTheme.elevation,
       backgroundColor: Theme.of(ctx).appBarTheme.color,
     );

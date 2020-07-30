@@ -1,6 +1,6 @@
-import '../models/brand_model.dart';
-import '../resources/images.dart';
-import '../resources/strings.dart';
+import 'package:demo_app/models/brand_model.dart';
+import 'package:demo_app/resources/images.dart';
+import 'package:demo_app/resources/strings.dart';
 
 const BrandData = [
   BrandModel(

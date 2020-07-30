@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../styles/colors.dart';
+import 'package:demo_app/styles/colors.dart';
 
 class NewTag extends StatelessWidget {
   @override

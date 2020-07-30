@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../common/container_layout.dart';
-import '../resources/images.dart';
-import '../resources/strings.dart';
-import '../common/heading.dart';
-import '../common/twoline_text.dart';
+import 'package:demo_app/common/container_layout.dart';
+import 'package:demo_app/resources/images.dart';
+import 'package:demo_app/resources/strings.dart';
+import 'package:demo_app/common/heading.dart';
+import 'package:demo_app/common/twoline_text.dart';
 
 class RoamingPlans extends StatelessWidget {
   @override

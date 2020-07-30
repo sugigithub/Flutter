@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '../data/latest_promos_data.dart';
-import '../common/rich_text.dart';
-import '../styles/global_styles.dart';
-import '../common/heading.dart';
-import '../common/with_padding.dart';
-import '../resources/strings.dart';
+import 'package:demo_app/data/latest_promos_data.dart';
+import 'package:demo_app/common/rich_text.dart';
+import 'package:demo_app/styles/global_styles.dart';
+import 'package:demo_app/common/heading.dart';
+import 'package:demo_app/common/with_padding.dart';
+import 'package:demo_app/resources/strings.dart';
 
 class LatestPromos extends StatelessWidget {
   @override

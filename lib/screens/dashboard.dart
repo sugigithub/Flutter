@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
-
 import 'package:provider/provider.dart';
 
-import '../resources/images.dart';
-import '../common/app_bar.dart';
-import '../common/sideDrawer.dart';
-import '../widgets/bottom_nav.dart';
-import '../widgets/profile_detail.dart';
-import '../widgets/balance_component/balance_comp.dart';
-import '../common/special_Promos.dart';
-import '../widgets/latest_promos.dart';
-import '../widgets/globe_rewards.dart';
-import '../widgets/brand.dart';
-import '../common/button.dart';
-import '../widgets/my_subscriptions/my_subscriptions.dart';
-import '../resources/strings.dart';
-import '../data/user_account.dart';
+import 'package:demo_app/resources/images.dart';
+import 'package:demo_app/common/app_bar.dart';
+import 'package:demo_app/common/sideDrawer.dart';
+import 'package:demo_app/widgets/bottom_nav.dart';
+import 'package:demo_app/widgets/profile_detail.dart';
+import 'package:demo_app/widgets/balance_component/balance_comp.dart';
+import 'package:demo_app/common/special_Promos.dart';
+import 'package:demo_app/widgets/latest_promos.dart';
+import 'package:demo_app/widgets/globe_rewards.dart';
+import 'package:demo_app/widgets/brand.dart';
+import 'package:demo_app/common/button.dart';
+import 'package:demo_app/widgets/my_subscriptions/my_subscriptions.dart';
+import 'package:demo_app/resources/strings.dart';
+import 'package:demo_app/data/user_account.dart';
 
 class Dashboard extends StatefulWidget {
   @override

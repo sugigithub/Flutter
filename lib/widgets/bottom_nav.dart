@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../styles/colors.dart';
-import '../styles/global_styles.dart';
+import 'package:demo_app/styles/colors.dart';
+import 'package:demo_app/styles/global_styles.dart';
 
 class BottomNav extends StatelessWidget {
   final List<Map<String, dynamic>> bottomNav;

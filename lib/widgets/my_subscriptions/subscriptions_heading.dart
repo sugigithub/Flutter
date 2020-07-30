@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 import 'package:demo_app/styles/global_styles.dart';
-import '../../common/with_padding.dart';
-import '../../styles/colors.dart';
-import '../../resources/strings.dart';
-import '../../common/text_gradient.dart';
+import 'package:demo_app/common/with_padding.dart';
+import 'package:demo_app/styles/colors.dart';
+import 'package:demo_app/resources/strings.dart';
+import 'package:demo_app/common/text_gradient.dart';
 
 class SubscriptionsHeading extends StatelessWidget {
   @override

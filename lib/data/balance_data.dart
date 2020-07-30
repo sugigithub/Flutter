@@ -1,7 +1,7 @@
-import '../models/balance_model.dart';
-import '../resources/images.dart';
-import '../resources/strings.dart';
-import '../models/recommended.dart';
+import 'package:demo_app/models/balance_model.dart';
+import 'package:demo_app/resources/images.dart';
+import 'package:demo_app/resources/strings.dart';
+import 'package:demo_app/models/recommended.dart';
 
 const Balance_data = [
   BalanceModel(

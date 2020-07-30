@@ -1,6 +1,3 @@
-/// {@category Theme}
-// This is the file for other global styles that are not in typography
-
 import 'package:flutter/material.dart';
 
 import 'colors.dart';

@@ -60,16 +60,22 @@ class SpecialPromos extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
                         Text(caption),
-                        TwoLineText([
-                          {
-                            'text': subHeading,
-                            'style': Theme.of(context).textTheme.headline6
-                          },
-                          {
-                            'text': desc,
-                            'style': Theme.of(context).textTheme.caption
-                          }
-                        ])
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 10),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              Text(
+                                subHeading,
+                                style: Theme.of(context).textTheme.headline6,
+                              ),
+                              SizedBox(height: 5),
+                              Text(desc,
+                                  style: Theme.of(context).textTheme.caption),
+                            ],
+                          ),
+                        ),
                       ],
                     ),
                   ),

@@ -1,6 +1,6 @@
-import '../resources/images.dart';
-import '../models/movie_poster.dart';
-import '../resources/strings.dart';
+import 'package:demo_app/resources/images.dart';
+import 'package:demo_app/models/movie_poster.dart';
+import 'package:demo_app/resources/strings.dart';
 
 final moviesData = [
   MoviePoster(

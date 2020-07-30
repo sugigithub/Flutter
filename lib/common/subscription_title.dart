@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../resources/strings.dart';
-import '../styles/global_styles.dart';
+import 'package:demo_app/resources/strings.dart';
+import 'package:demo_app/styles/global_styles.dart';
 
 class SubscriptionTitle extends StatelessWidget {
   final String text;

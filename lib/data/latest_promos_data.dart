@@ -1,6 +1,6 @@
-import '../models/latest_promos.dart';
-import '../resources/strings.dart';
-import '../resources/images.dart';
+import 'package:demo_app/models/latest_promos.dart';
+import 'package:demo_app/resources/strings.dart';
+import 'package:demo_app/resources/images.dart';
 
 const LatestPromosData = [
   LatestPromos(

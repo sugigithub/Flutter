@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../resources/strings.dart';
-import '../models/user_account.dart';
+import 'package:demo_app/resources/strings.dart';
+import 'package:demo_app/models/user_account.dart';
 
 class AccountData with ChangeNotifier {
   int _activeIndex = 0;

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../styles/colors.dart';
-import '../../styles/global_styles.dart';
-import '../../resources/images.dart';
-import '../../common/twoline_text.dart';
+import 'package:demo_app/styles/colors.dart';
+import 'package:demo_app/styles/global_styles.dart';
+import 'package:demo_app/resources/images.dart';
+import 'my_prepaid_card.dart';
 
 class MyPrepaid extends StatelessWidget {
   final List data;
@@ -21,72 +21,33 @@ class MyPrepaid extends StatelessWidget {
           horizontal: 20,
         ),
         scrollDirection: Axis.horizontal,
-        itemBuilder: (_, i) {
-          return Align(
-            alignment: Alignment.topCenter,
-            child: GestureDetector(
-              onTap: () {
-                changeCard(i);
-              },
-              child: Container(
-                width: index == i ? 170 : 140,
-                height: index == i ? 180 : 160,
-                child: Card(
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15)),
-                  elevation: 0,
-                  child: Container(
-                    decoration: index == i
-                        ? BoxDecoration(
-                            color: DefaultColors.darkBlue,
-                            borderRadius: BorderRadius.circular(15),
-                            image: DecorationImage(
-                              image: AssetImage(Images.loadblanceBackground),
-                              fit: BoxFit.cover,
-                            ),
-                          )
-                        : BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                    padding: EdgeInsets.all(16),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: <Widget>[
-                        Image.asset(
-                          data[i].image,
-                          fit: BoxFit.cover,
-                          height: 22,
-                          width: 22,
-                        ),
-                        TwoLineText([
-                          {
-                            'text': data[i].text,
-                            'style': index == i
-                                ? Theme.of(context).textTheme.caption
-                                : GlobalStyles.of(context).altCardcaption
-                          },
-                          {
-                            'text': data[i].amount,
-                            'style': index == i
-                                ? Theme.of(context).textTheme.headline5
-                                : GlobalStyles.of(context).altCardText,
-                          },
-                        ]),
-                        Text(
-                          data[i].validity,
-                          style: index == i
-                              ? GlobalStyles.of(context).captionMediumWhite
-                              : GlobalStyles.of(context).altCardValidity,
-                        ),
-                      ],
-                    ),
+        itemBuilder: (_, i) => MyPrepaidCard(
+          changeCard: () => changeCard(i),
+          width: index == i ? 170 : 140,
+          height: index == i ? 180 : 160,
+          decoration: index == i
+              ? BoxDecoration(
+                  color: DefaultColors.darkBlue,
+                  borderRadius: BorderRadius.circular(15),
+                  image: DecorationImage(
+                    image: AssetImage(Images.loadblanceBackground),
+                    fit: BoxFit.cover,
                   ),
+                )
+              : BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
                 ),
-              ),
-            ),
-          );
-        },
+          data: data[i],
+          captionStyle: index == i
+              ? Theme.of(context).textTheme.caption
+              : GlobalStyles.of(context).altCardcaption,
+          amountStyle: index == i
+              ? Theme.of(context).textTheme.headline5
+              : GlobalStyles.of(context).altCardText,
+          validityStyle: index == i
+              ? GlobalStyles.of(context).captionMediumWhite
+              : GlobalStyles.of(context).altCardValidity,
+        ),
         itemCount: data.length,
       ),
     );

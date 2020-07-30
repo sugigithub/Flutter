@@ -1,7 +1,7 @@
-import '../models/you_may_like_model.dart';
-import '../resources/strings.dart';
-import '../resources/images.dart';
-import '../styles/colors.dart';
+import 'package:demo_app/models/you_may_like_model.dart';
+import 'package:demo_app/resources/strings.dart';
+import 'package:demo_app/resources/images.dart';
+import 'package:demo_app/styles/colors.dart';
 
 const YouMayLikeData = [
   YouMayLike(

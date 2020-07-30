@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../styles/colors.dart';
+import 'package:demo_app/styles/colors.dart';
 
 class NotificationBadge extends StatelessWidget {
   const NotificationBadge({

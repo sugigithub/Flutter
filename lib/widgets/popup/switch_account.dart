@@ -1,49 +1,24 @@
 import 'package:demo_app/models/user_account.dart';
 import 'package:flutter/material.dart';
 
-import '../../styles/colors.dart';
-import '../../resources/strings.dart';
-import '../../styles/global_styles.dart';
-import '../../common/twoline_text.dart';
-import '../../resources/images.dart';
+import 'package:demo_app/styles/colors.dart';
+import 'package:demo_app/resources/strings.dart';
+import 'package:demo_app/styles/global_styles.dart';
+import 'package:demo_app/resources/images.dart';
 
 class SwitchAccount extends StatelessWidget {
   final UserAccount activeAccount;
   final Function changeAccount;
   final List<UserAccount> accounts;
 
-  SwitchAccount(this.activeAccount, this.changeAccount, this.accounts);
+  SwitchAccount(
+    this.activeAccount,
+    this.changeAccount,
+    this.accounts,
+  );
+
   @override
   Widget build(BuildContext context) {
-    Widget _buildListItem(UserAccount account) {
-      return GestureDetector(
-        onTap: () => changeAccount(accounts.indexOf(account)),
-        child: Container(
-          // height: 70,
-          padding: EdgeInsets.symmetric(horizontal: 16),
-          color: DefaultColors.white,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              TwoLineText([
-                {
-                  'text': account.accountName,
-                  'style': GlobalStyles.of(context).popupAccText
-                },
-                {
-                  'text': account.accountNo,
-                  'style': GlobalStyles.of(context).popupAccNoText
-                },
-              ]),
-              if (activeAccount == account)
-                Image.asset(Images.checked,
-                    fit: BoxFit.cover, height: 28, width: 28)
-            ],
-          ),
-        ),
-      );
-    }
-
     return SimpleDialog(
       backgroundColor: DefaultColors.lightGrey2,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
@@ -59,12 +34,44 @@ class SwitchAccount extends StatelessWidget {
         ),
         ...accounts
             .map(
-              (acc) => _buildListItem(acc),
+              (acc) => _buildListItem(acc, context),
             )
             .toList()
-
-        // _buildListItem(Strings.myPostPaid, Strings.postpaidAccountNo),
       ],
+    );
+  }
+
+  Widget _buildListItem(UserAccount account, BuildContext context) {
+    return GestureDetector(
+      onTap: () => changeAccount(accounts.indexOf(account)),
+      child: Container(
+        // height: 70,
+        padding: EdgeInsets.symmetric(horizontal: 16),
+        color: DefaultColors.white,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    account.accountName,
+                    style: GlobalStyles.of(context).popupAccText,
+                  ),
+                  SizedBox(height: 5),
+                  Text(account.accountNo,
+                      style: GlobalStyles.of(context).popupAccNoText),
+                ],
+              ),
+            ),
+            if (activeAccount == account)
+              Image.asset(Images.checked,
+                  fit: BoxFit.cover, height: 28, width: 28)
+          ],
+        ),
+      ),
     );
   }
 }

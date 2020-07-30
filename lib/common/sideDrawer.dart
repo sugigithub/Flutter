@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'package:demo_app/data/user_account.dart';
-import '../styles/colors.dart';
-import '../styles/global_styles.dart';
-import '../resources/images.dart';
-import '../resources/strings.dart';
-import '../common/with_padding.dart';
+import 'package:demo_app/styles/colors.dart';
+import 'package:demo_app/styles/global_styles.dart';
+import 'package:demo_app/resources/images.dart';
+import 'package:demo_app/resources/strings.dart';
+import 'package:demo_app/common/with_padding.dart';
 
 class SideDrawer extends StatelessWidget {
   @override
@@ -21,7 +21,8 @@ class SideDrawer extends StatelessWidget {
           Container(
               height: 120,
               width: double.infinity,
-              padding: const EdgeInsets.all(20),
+              padding: const EdgeInsets.only(
+                  top: 40, left: 20, right: 20, bottom: 20),
               color: DefaultColors.drawerBlue,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

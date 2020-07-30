@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../styles/colors.dart';
-import '../../common/movie_poster.dart';
-import '../../data/movies.dart';
+import 'package:demo_app/styles/colors.dart';
+import 'package:demo_app/common/movie_poster.dart';
+import 'package:demo_app/data/movies.dart';
 import 'you_may_like.dart';
 import 'subscriptions_heading.dart';
 

@@ -1,5 +1,5 @@
-import '../models/recommended.dart';
-import '../resources/strings.dart';
+import 'package:demo_app/models/recommended.dart';
+import 'package:demo_app/resources/strings.dart';
 
 const RecommendedData = [
   RecommendedModel(

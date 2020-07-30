@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'text_gradient.dart';
-import '../styles/colors.dart';
-import '../styles/global_styles.dart';
+import 'package:demo_app/styles/colors.dart';
+import 'package:demo_app/styles/global_styles.dart';
 
 class Heading extends StatelessWidget {
   final String heading;
