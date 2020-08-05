@@ -25,7 +25,8 @@ class SwitchAccount extends StatelessWidget {
       elevation: 2,
       children: <Widget>[
         Container(
-          padding: EdgeInsets.only(left: 16, right: 16, bottom: 20, top: 8),
+          padding:
+              const EdgeInsets.only(left: 16, right: 16, bottom: 20, top: 8),
           color: DefaultColors.lightGrey2,
           child: Text(
             Strings.selectanAccount,
@@ -46,7 +47,7 @@ class SwitchAccount extends StatelessWidget {
       onTap: () => changeAccount(accounts.indexOf(account)),
       child: Container(
         // height: 70,
-        padding: EdgeInsets.symmetric(horizontal: 16),
+        padding: const EdgeInsets.symmetric(horizontal: 16),
         color: DefaultColors.white,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

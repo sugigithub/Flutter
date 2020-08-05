@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'heading.dart';
-import 'twoline_text.dart';
 
 class SpecialPromos extends StatelessWidget {
   final String heading;
@@ -30,7 +29,7 @@ class SpecialPromos extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Padding(
-            padding: EdgeInsets.only(left: 4, bottom: 10),
+            padding: const EdgeInsets.only(left: 4, bottom: 10),
             child: Heading(heading: heading),
           ),
           Card(
@@ -81,8 +80,9 @@ class SpecialPromos extends StatelessWidget {
                   ),
                   Container(
                     width: double.infinity,
-                    padding: EdgeInsets.only(left: 20, top: 15, bottom: 15),
-                    decoration: BoxDecoration(
+                    padding:
+                        const EdgeInsets.only(left: 20, top: 15, bottom: 15),
+                    decoration: const BoxDecoration(
                       borderRadius: BorderRadius.all(
                         Radius.circular(15),
                       ),

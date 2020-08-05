@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:demo_app/common/with_padding.dart';
-import 'subscription_title.dart';
+import '../widgets/my_subscriptions/subscription_title.dart';
 
 class MoviePoster extends StatelessWidget {
   final List<String> data;

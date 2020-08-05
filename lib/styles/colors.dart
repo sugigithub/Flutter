@@ -34,4 +34,10 @@ class DefaultColors {
   static const Color footerSelected = Color(0xFFEDEEFF);
   static const Color lightGrey2 = Color(0xFFf6f7fb);
   static const Color lightGrey3 = Color(0xFF8e8e8e);
+
+  static const Color paleGreen = Color(0xFFc4f0ed);
+  static const Color paleGreen1 = Color(0xFFE7F9F7);
+  static const Color inkBlue = Color(0xFF1a1863);
+  static const Color darkGrey = Color(0xFF404143);
+  static const Color promosBlue = Color(0xFFebecff);
 }

@@ -3,16 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:demo_app/styles/colors.dart';
 import 'package:demo_app/styles/global_styles.dart';
 import 'package:demo_app/models/recommended.dart';
+import 'package:demo_app/common/tag.dart';
 
 class RecommendedCard extends StatelessWidget {
   final double width;
   final RecommendedModel data;
-  final Widget widget;
 
   RecommendedCard({
     @required this.width,
     @required this.data,
-    @required this.widget,
   });
 
   @override
@@ -27,7 +26,11 @@ class RecommendedCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            widget,
+            data.newTag
+                ? Tag('new')
+                : SizedBox(
+                    height: 20,
+                  ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Column(

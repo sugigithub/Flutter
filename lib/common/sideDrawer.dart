@@ -19,7 +19,7 @@ class SideDrawer extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Container(
-              height: 120,
+              height: 160,
               width: double.infinity,
               padding: const EdgeInsets.only(
                   top: 40, left: 20, right: 20, bottom: 20),

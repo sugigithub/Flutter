@@ -17,6 +17,7 @@ class Themes {
       appBarTheme: AppBarTheme(
         color: DefaultColors.white,
         elevation: 0,
+        iconTheme: IconThemeData(color: DefaultColors.black),
       ),
       textTheme: getTextTheme().apply(fontFamily: 'AvenirNext'),
     );

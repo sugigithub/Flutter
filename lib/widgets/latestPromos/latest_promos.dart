@@ -1,20 +1,12 @@
 import 'package:flutter/material.dart';
 
+import 'package:demo_app/data/latest_promos_data.dart';
+import 'package:demo_app/common/heading.dart';
 import 'package:demo_app/common/with_padding.dart';
+import 'package:demo_app/resources/strings.dart';
+import 'latest_promos_card.dart';
 
-/// builds a list of cards with heading
-
-class CardBuilder extends StatelessWidget {
-  final Widget heading;
-  final double height;
-  final Function card;
-  final int count;
-
-  CardBuilder(
-      {@required this.heading,
-      @required this.height,
-      @required this.card,
-      @required this.count});
+class LatestPromos extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -22,16 +14,16 @@ class CardBuilder extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: <Widget>[
         WithPadding(
-          heading,
+          Heading(heading: Strings.latestPromos, text: Strings.viewAll),
         ),
         Container(
-          height: height,
+          height: 215,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             padding:
                 const EdgeInsets.only(left: 16, right: 16, top: 10, bottom: 15),
-            itemCount: count,
-            itemBuilder: card,
+            itemCount: LatestPromosData.length,
+            itemBuilder: (_, i) => LatestPromosCard(LatestPromosData[i]),
           ),
         )
       ],

@@ -35,7 +35,7 @@ class BottomNav extends StatelessWidget {
             ),
           ),
           title: Container(
-            padding: EdgeInsets.all(5),
+            padding: const EdgeInsets.all(5),
             decoration: BoxDecoration(
                 color: selectedIndex == bottomNav.indexOf(item)
                     ? DefaultColors.footerSelected

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 import 'package:demo_app/resources/strings.dart';
 import 'package:demo_app/styles/global_styles.dart';
-import 'new_tag.dart';
 import 'package:demo_app/models/recommended.dart';
 import 'package:demo_app/common/with_padding.dart';
 import 'recommended_card.dart';
+import 'package:demo_app/routes.dart';
 
 class RecommemdedComponent extends StatelessWidget {
   final List<RecommendedModel> data;
@@ -25,9 +25,15 @@ class RecommemdedComponent extends StatelessWidget {
                 Strings.recommedned,
                 style: GlobalStyles.of(context).recommendedText,
               ),
-              Text(
-                Strings.viewAll,
-                style: GlobalStyles.of(context).viewAllText,
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).pushNamed(Routes.promos);
+                  print("in fun");
+                },
+                child: Text(
+                  Strings.viewAll,
+                  style: GlobalStyles.of(context).viewAllText,
+                ),
               )
             ],
           ),
@@ -42,11 +48,6 @@ class RecommemdedComponent extends StatelessWidget {
             itemBuilder: (_, i) => RecommendedCard(
               width: 180,
               data: data[i],
-              widget: data[i].newTag
-                  ? NewTag()
-                  : SizedBox(
-                      height: 20,
-                    ),
             ),
           ),
         ),

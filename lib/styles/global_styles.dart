@@ -140,6 +140,56 @@ class GlobalStyles extends InheritedWidget {
             fontWeight: FontWeight.w700,
           );
 
+  TextStyle get promosTitle => Theme.of(context).textTheme.subtitle1.copyWith(
+      color: DefaultColors.inkBlue,
+      fontFamily: 'AvenirNext',
+      fontWeight: FontWeight.w700,
+      letterSpacing: -0.62);
+
+  TextStyle get promosTitle1 => Theme.of(context).textTheme.subtitle2.copyWith(
+      color: DefaultColors.inkBlue,
+      fontFamily: 'AvenirNext',
+      fontWeight: FontWeight.w700,
+      letterSpacing: -0.62);
+
+  TextStyle get promosAmount => Theme.of(context).textTheme.subtitle1.copyWith(
+      color: DefaultColors.inkBlue,
+      fontFamily: 'AvenirNext',
+      fontWeight: FontWeight.w600,
+      letterSpacing: -0.62);
+
+  TextStyle get promosValidity => Theme.of(context).textTheme.caption.copyWith(
+        color: DefaultColors.inkBlue,
+        fontFamily: 'AvenirNext',
+        fontWeight: FontWeight.w400,
+      );
+
+  TextStyle get promosValidity1 => Theme.of(context).textTheme.caption.copyWith(
+        color: DefaultColors.inkBlue,
+        fontFamily: 'AvenirNext',
+        fontWeight: FontWeight.w600,
+      );
+
+  TextStyle get promosdesc => Theme.of(context).textTheme.overline.copyWith(
+        color: DefaultColors.darkGrey,
+        fontFamily: 'AvenirNext',
+        fontWeight: FontWeight.w500,
+        letterSpacing: -0.18,
+        fontSize: 11,
+      );
+
+  TextStyle get promosUnSelected =>
+      Theme.of(context).textTheme.caption.copyWith(
+            color: DefaultColors.black,
+            fontFamily: 'AvenirNext',
+            fontWeight: FontWeight.w500,
+          );
+
+  TextStyle get pageTitle => Theme.of(context).textTheme.headline6.copyWith(
+        color: DefaultColors.black,
+        fontFamily: 'AvenirNext',
+        fontWeight: FontWeight.w700,
+      );
   static GlobalStyles of(BuildContext context) {
     return context.dependOnInheritedWidgetOfExactType<GlobalStyles>();
   }

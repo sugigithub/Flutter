@@ -1,5 +1,7 @@
 class Strings {
   Strings._();
+
+  //dashboard
   static const myPrepaid = 'My Prepaid';
   static const loadBalance = 'Load Balance';
   static const validTill = 'Valid till 26 Dec';
@@ -45,4 +47,57 @@ class Strings {
   static const getHairSpa = 'Get Hair Spa & Styling.';
   static const selectanAccount = 'Select an Account';
   static const myPostPaid = 'My Post Paid';
+
+  //promos
+  static const goSAKTO = 'GoSAKTO';
+  static const goSURF = 'GoSURF';
+  static const goUNLI = 'GoUNLI';
+  static const goROAM = 'GoROAM';
+  static const days = 'Days';
+  static const appOfChoice = '1GB for an app of your choice';
+  static const fbAndInsta = '1GB for Facebook and Instagram';
+  static const goWifi = '1GB GoWifi access';
+  static const gCash = 'P50 GCash QR voucher';
+  static const oneGbData = '1 GB';
+  static const twoGbData = '2 GB';
+  static const fiveGbData = '5 GB';
+  static const tenGbData = '10 GB';
+  static const twentyGbData = '20 GB';
+  static const goSURF199 = 'GoSURF199';
+  static const goSURF299 = 'GoSURF299';
+  static const goSURF599 = 'GoSURF599';
+  static const goSURF999 = 'GoSURF999';
+  static const goSURF1999 = 'GoSURF1999';
+  static const goSAKTO199 = 'GoSAKTO199';
+  static const goSAKTO299 = 'GoSAKTO299';
+  static const goSAKTO599 = 'GoSAKTO599';
+  static const goSAKTO999 = 'GoSAKTO999';
+  static const goSAKTO1999 = 'GoSAKTO1999';
+  static const goUNLI199 = 'GoUNLI199';
+  static const goUNLI299 = 'GoUNLI299';
+  static const goUNLI599 = 'GoUNLI599';
+  static const goUNLI999 = 'GoUNLI999';
+  static const goUNLI1999 = 'GoUNLI1999';
+  static const goROAM199 = 'GoROAM199';
+  static const goROAM299 = 'GoROAM299';
+  static const goROAM599 = 'GoROAM599';
+  static const goROAM999 = 'GoROAM999';
+  static const goROAM1999 = 'GoROAM1999';
+  static const data = 'Data';
+  static const promos = 'Promos';
+
+  //events in globe
+
+  static const funWithGlobe = 'Have More fun with Globe!';
+  static const events = 'Events';
+  static const travel = 'Travel';
+  static const shop = 'SHOP';
+  static const food = 'FOOD';
+  static const photography = 'Photography';
+  static const musicNight = 'Music Night Festival';
+  static const ayalaStatium = 'Ayala Stadium';
+  static const kidsCarnival = 'Kids Carnival ';
+  static const cebu = 'Cebu';
+  static const goCarting = 'Go Carting';
+  static const searchConcerts = 'Search for Concerts';
 }

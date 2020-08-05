@@ -13,7 +13,7 @@ class GlobeRewards extends StatelessWidget {
     return Container(
       height: 150,
       width: double.infinity,
-      padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -24,7 +24,7 @@ class GlobeRewards extends StatelessWidget {
             width: double.infinity,
             margin: EdgeInsets.only(top: 15),
             height: 85,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(10)),
               gradient: LinearGradient(
                   begin: Alignment.topLeft,

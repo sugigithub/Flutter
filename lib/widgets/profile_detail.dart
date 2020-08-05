@@ -22,21 +22,6 @@ class _ProfileDetailState extends State<ProfileDetail> {
     super.initState();
   }
 
-  void _changeAccount(int index) {
-    print(index);
-    Navigator.of(context).pop();
-    activeAccount = accountData.changeActiveAccount(index);
-  }
-
-  void _openModel() {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return SwitchAccount(activeAccount, _changeAccount, accounts);
-      },
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     accountData = Provider.of<AccountData>(context);
@@ -44,7 +29,7 @@ class _ProfileDetailState extends State<ProfileDetail> {
     activeAccount = accountData.activeAccount;
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
       child: InkWell(
         onTap: () => _openModel(),
         child: Column(
@@ -83,6 +68,21 @@ class _ProfileDetailState extends State<ProfileDetail> {
           ],
         ),
       ),
+    );
+  }
+
+  void _changeAccount(int index) {
+    print(index);
+    Navigator.of(context).pop();
+    activeAccount = accountData.changeActiveAccount(index);
+  }
+
+  void _openModel() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return SwitchAccount(activeAccount, _changeAccount, accounts);
+      },
     );
   }
 }

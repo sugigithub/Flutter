@@ -38,7 +38,7 @@ class MyPrepaidCard extends StatelessWidget {
             elevation: 0,
             child: Container(
               decoration: decoration,
-              padding: EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceAround,

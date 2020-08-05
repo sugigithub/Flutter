@@ -68,4 +68,15 @@ class Images {
   static const String youAreWanted = 'assets/images/youarewanted.png';
   static const String nike = 'assets/images/nike.png';
   static const String checked = 'assets/images/checked.png';
+
+  static const String arrowBack = 'assets/images/arrow_back.png';
+  static const String locationIcon = 'assets/images/location_icon.png';
+  static const String searchIcon = 'assets/images/search_icon.png';
+  static const String calenderIcon = 'assets/images/calender_icon.png';
+  static const String events = 'assets/images/events.png';
+  static const String events1 = 'assets/images/events1.png';
+  static const String events2 = 'assets/images/events2.png';
+  static const String events3 = 'assets/images/events3.png';
+  static const String events4 = 'assets/images/events4.png';
+  static const String events5 = 'assets/images/events5.png';
 }
