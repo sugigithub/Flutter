@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:demo_app/resources/images.dart';
-import 'package:demo_app/widgets/profile_detail.dart';
+import 'package:demo_app/common/profile_detail.dart';
 import 'package:demo_app/widgets/balance_component/balance_comp.dart';
 import 'package:demo_app/common/special_Promos.dart';
 import 'package:demo_app/widgets/latestPromos/latest_promos.dart';

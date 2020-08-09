@@ -5,7 +5,7 @@ class Promo {
   final String plan;
   final int amount;
   final int validity;
-  final List<String> description;
+  final List<dynamic> description;
 
   const Promo({
     @required this.title,

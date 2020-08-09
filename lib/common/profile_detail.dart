@@ -72,7 +72,6 @@ class _ProfileDetailState extends State<ProfileDetail> {
   }
 
   void _changeAccount(int index) {
-    print(index);
     Navigator.of(context).pop();
     activeAccount = accountData.changeActiveAccount(index);
   }
